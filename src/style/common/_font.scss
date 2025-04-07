@@ -2,8 +2,8 @@
 
 body {
   // font-family: "Roboto", sans-serif;
-  // font-family: "Poppins", sans-serif;
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  // font-family: "Inter", sans-serif;
 }
 $const_font_weight: 400;
 
@@ -28,6 +28,12 @@ $const_font_weight: 400;
 }
 @mixin f40($weight: $const_font_weight) {
   @include font_generator(40, 100, $weight);
+  @include mobile {
+    @content;
+  }
+}
+@mixin f36($weight: $const_font_weight) {
+  @include font_generator(36, 100, $weight);
   @include mobile {
     @content;
   }

@@ -1,0 +1,15 @@
+.section9_footer {
+  display: flex;
+  justify-content: center;
+  gap: 0 100px;
+  background-color: #161214;
+  color: white;
+  padding: 50px 100px;
+  .section9_footer_left {
+    width: 40%;
+    .section9_footer_left_title {
+      @include f21(500);
+      margin: 0 0 10px 0;
+    }
+  }
+}

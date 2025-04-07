@@ -8,10 +8,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 93px 12px 28px;
+    padding: 7px 100px 7px 100px;
     background-color: var(--envy);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: var(--white);
+    color: var(--black);
     @include mobile {
       padding: 12px 18px 12px 18px;
       gap: 20px 0;
@@ -28,7 +28,7 @@
       gap: 20px;
       align-items: center;
 
-      @include f24(300);
+      @include f14(400);
       @include mobile {
         width: 100%;
         @include f18;
@@ -44,7 +44,7 @@
             height: 22px;
           }
           path {
-            fill: var(--white);
+            fill: var(--black);
             transition: fill 0.2s;
           }
         }
@@ -58,7 +58,7 @@
       }
       a {
         cursor: pointer;
-        color: var(--white);
+        color: var(--black);
         text-decoration: none;
 
         &:hover {
@@ -81,8 +81,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--sunset-pearl);
-    padding: 0 93px 0 28px;
+    background-color: var(--white);
+    padding: 14px 100px 14px 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     .navbar_section2_mobile_menu {
       display: none;
       cursor: pointer;
@@ -103,9 +104,9 @@
 
     > div {
       display: flex;
-      gap: 40px;
+      gap: 10px;
       align-items: center;
-      @include f24;
+      @include f16;
       > div {
         display: flex;
         align-items: center;
@@ -120,9 +121,36 @@
         display: flex;
         align-items: center;
         gap: 0 5px;
+        padding: 6px 12px;
+        border-radius: 100px;
         &:hover {
-          text-decoration: underline;
+          outline: 1px solid var(--black);
         }
+      }
+    }
+    .navbar_section2_search_container {
+      display: flex;
+      align-items: center;
+      gap: 0 10px;
+      border-radius: 62px;
+      // border: 1px solid var(--black);
+      background-color: #f0f0f0;
+      padding: 12px 16px;
+      &:focus {
+        outline: none;
+        border-color: var(--sunset-pearl);
+      }
+      input {
+        width: 100%;
+        // padding: 10px 20px;
+        background-color: transparent;
+        color: var(--black);
+        @include f16(300);
+        outline: none;
+        border: none;
+      }
+      svg {
+        cursor: pointer;
       }
     }
   }
