@@ -1,0 +1,145 @@
+.navbar_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  .navbar_section1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 93px 12px 28px;
+    background-color: var(--envy);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--white);
+    @include mobile {
+      padding: 12px 18px 12px 18px;
+      gap: 20px 0;
+      flex-direction: column;
+    }
+
+    .follow_up_nav {
+      @include mobile {
+        display: none;
+      }
+    }
+    > div {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+
+      @include f24(300);
+      @include mobile {
+        width: 100%;
+        @include f18;
+      }
+      > div {
+        display: flex;
+        align-items: center;
+
+        svg {
+          cursor: pointer;
+          @include mobile {
+            width: 22px;
+            height: 22px;
+          }
+          path {
+            fill: var(--white);
+            transition: fill 0.2s;
+          }
+        }
+        &:hover {
+          svg {
+            path {
+              fill: var(--sunset-pearl);
+            }
+          }
+        }
+      }
+      a {
+        cursor: pointer;
+        color: var(--white);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .navbar_contacts {
+      @include mobile {
+        justify-content: space-between;
+      }
+    }
+    .navbar_social_icons {
+      @include mobile {
+        justify-content: center;
+      }
+    }
+  }
+  .navbar_section2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--sunset-pearl);
+    padding: 0 93px 0 28px;
+    .navbar_section2_mobile_menu {
+      display: none;
+      cursor: pointer;
+    }
+    @include mobile {
+      padding: 10px 18px 7px 18px;
+      img {
+        width: 120px;
+        height: 50px;
+      }
+      .navbar_section2_desktop_menu {
+        display: none;
+      }
+      .navbar_section2_mobile_menu {
+        display: block;
+      }
+    }
+
+    > div {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      @include f24;
+      > div {
+        display: flex;
+        align-items: center;
+        svg {
+          cursor: pointer;
+        }
+      }
+      a {
+        cursor: pointer;
+        color: var(--black);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0 5px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .navbar_section2_list {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--sunset-pearl);
+    padding: 20px;
+    > a {
+      color: var(--black);
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0 10px;
+      padding: 20px;
+      @include f18;
+    }
+  }
+}

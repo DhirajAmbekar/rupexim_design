@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  // font-family: "Roboto", sans-serif;
+  // font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
+}
+$const_font_weight: 400;
+
+@mixin font_generator($font_size, $line_height, $weight) {
+  --fs: #{desktop_length($font_size)};
+  font-size: calc($font_size * 1px);
+  line-height: calc($line_height * 1%);
+  font-weight: $weight;
+  @include mobile {
+    --fs: #{mobile_length($font_size)};
+    --lh: #{mobile_length($line_height)};
+    font-size: calc($font_size * 1px);
+    line-height: calc($line_height * 1%);
+  }
+}
+
+@mixin f48($weight: $const_font_weight) {
+  @include font_generator(48, 100, $weight);
+  @include mobile {
+    @content;
+  }
+}
+@mixin f40($weight: $const_font_weight) {
+  @include font_generator(40, 100, $weight);
+  @include mobile {
+    @content;
+  }
+}
+@mixin f32($weight: $const_font_weight) {
+  @include font_generator(32, 100, $weight);
+  @include mobile {
+    @content;
+  }
+}
+@mixin f28($weight: $const_font_weight) {
+  @include font_generator(28, 100, $weight);
+  @include mobile {
+    @content;
+  }
+}
+@mixin f24($weight: $const_font_weight) {
+  @include font_generator(24, 100, $weight);
+  @include mobile {
+    @content;
+  }
+}
+@mixin f21($weight: $const_font_weight) {
+  @include font_generator(21, 100, $weight);
+  @include mobile {
+    @content;
+  }
+}
+@mixin f20($weight: $const_font_weight) {
+  @include font_generator(20, 100, $weight);
+  @include mobile {
+    @content;
+  }
+}
+@mixin f18($weight: $const_font_weight) {
+  @include font_generator(18, 100, $weight);
+  @include mobile {
+    @content;
+  }
+}
+@mixin f16($weight: $const_font_weight) {
+  @include font_generator(16, 100, $weight);
+  @include mobile {
+    @content;
+  }
+}
+@mixin f14($weight: $const_font_weight) {
+  @include font_generator(14, 100, $weight);
+  @include mobile {
+    @content;
+  }
+}
+@mixin f12($weight: $const_font_weight) {
+  @include font_generator(14, 100, $weight);
+  @include mobile {
+    @content;
+  }
+}

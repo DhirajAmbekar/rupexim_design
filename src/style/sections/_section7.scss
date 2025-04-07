@@ -1,0 +1,81 @@
+.section7_container {
+  padding: 0 40px 30px 40px;
+  position: relative;
+  @include mobile {
+    padding: 0 20px 15px 20px;
+  }
+  .section7_title {
+    @include f32(700);
+    text-align: center;
+    margin: 0 0 63px 0;
+    @include mobile {
+      @include f28(700);
+    }
+  }
+  .section7_feedbacks {
+    .slick-slider {
+      .slick-list {
+        width: 55% !important;
+        margin: 0 auto;
+        @include mobile {
+          width: 100% !important;
+        }
+        .slick-track {
+          display: flex;
+          margin: 10px 0;
+          .slick-slide {
+            // border: 1px solid red;
+            height: unset;
+            align-self: stretch;
+            > div {
+              height: 100%;
+              .feedbacks_slider {
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+    .feedbacks_slider {
+      .feedbacks_desc {
+        @include f24;
+        text-align: center;
+      }
+      .feedbacks_name {
+        @include f32;
+        text-align: center;
+        margin: 20px 0;
+      }
+      .feedbacks_who {
+        @include f24;
+        text-align: center;
+        color: var(--envy);
+        margin: 0 0 49px 0;
+      }
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
+  .section7_left_arrow {
+    position: absolute;
+    left: 200px;
+    z-index: 100;
+    top: calc(100% - 63%);
+    cursor: pointer;
+    @include mobile {
+      display: none;
+    }
+  }
+  .section7_right_arrow {
+    position: absolute;
+    right: 200px;
+    z-index: 100;
+    top: calc(100% - 63%);
+    cursor: pointer;
+    @include mobile {
+      display: none;
+    }
+  }
+}
