@@ -10,10 +10,13 @@ export const Section5 = () => {
         backgroundPosition: "center",
         height: "100vh",
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "end",
+        alignItems: "center",
+        flexDirection: "column",
+        paddingBottom: "100px",
       }}
     >
-      
+      <button>Shop Now</button>
     </div>
   );
 };

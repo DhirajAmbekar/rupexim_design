@@ -1,3 +1,29 @@
-.section4_img{
+.section4_img {
   width: 100%;
+}
+.section4_container {
+  padding: 0 100px;
+  .text1 {
+    font-size: 50px;
+    font-weight: 600;
+    color: #7dccda;
+    text-align: center;
+  }
+  .text2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    width: 800px;
+  }
+  button {
+    background-color: #ffe926;
+    color: black;
+    border: 1px solid black;
+    border-radius: 100px;
+    padding: 18px 45px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 20px;
+  }
 }

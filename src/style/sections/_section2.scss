@@ -1,8 +1,49 @@
 .section2_container {
   position: relative;
   top: -8px;
-  img{
+  img {
     width: 100%;
+  }
+  .apparel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include f40(600);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100%;
+  }
+  .bags {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include f40(600);
+    writing-mode: vertical-rl;
+    transform: rotate(0deg);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 105px;
+    height: 100%;
+  }
+  .toys {
+    position: absolute;
+    bottom: 0;
+
+    @include f40(600);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 110px;
+    color: white;
   }
   // display: flex;
   // .section2_inner_box {

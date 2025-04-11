@@ -11,7 +11,15 @@ export const Section6 = () => {
         height: "100vh",
         display: "flex",
         justifyContent: "center",
+        alignItems: "end",
+        flexDirection: "column",
       }}
-    ></div>
+    >
+      {/* <div className="text1">Play, learn, & grow!</div>
+      <div className="text2">
+        Crafting smiles with every toy, made for learning, fun, and growth
+      </div>
+      <button>Shop Now</button> */}
+    </div>
   );
 };
