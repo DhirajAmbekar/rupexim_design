@@ -1,133 +1,32 @@
 .section6_container {
-  padding: 0 40px 0 40px;
-  @include mobile {
-    padding: 0 20px 0 20px;
-  }
-  .section6_title {
-    @include f32(700);
-    text-align: center;
-    margin: 0 0 63px 0;
-    @include mobile {
-      @include f24(700);
-    }
-  }
-  .section6_list {
-    display: flex;
-    justify-content: center;
-    gap: 0 48px;
-    @include mobile {
-      flex-direction: column;
-      gap: 20px 0;
-    }
-    .contact_detail {
-      .contact_detail_title {
-        @include f32(700);
-        text-align: center;
-        @include mobile{
-          @include f28(700);
-        }
-      }
-      .contact_detail_desc {
-        margin: 17px 0;
-        @include f48(700);
-        width: 556px;
-        color: var(--sunset-pearl);
-        text-align: center;
-        @include mobile {
-          @include f32(700);
-          width: 100%;
-        }
-      }
-      .contact_social_icons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0 20px;
-        > div {
-          svg {
-            path {
-              fill: var(--envy);
-            }
-            circle {
-              fill: var(--envy);
-            }
-          }
-        }
-      }
-    }
-    .inner_box {
-      img {
-        @include mobile {
-          width: 100%;
-        }
-      }
-      .inner_box_detial {
-        background-color: var(--sunset-pearl);
-        padding: 15px 28px;
-        width: 400px;
-        margin: 0 auto;
-        border-radius: 50px 0 50px 0;
-        text-align: center;
-        transform: translateY(-50px);
-        @include mobile {
-          width: 80%;
-        }
-        .inner_box_name {
-          @include f32;
-          color: var(--envy);
-          @include mobile {
-            @include f24;
-          }
-        }
-        .inner_box_designation {
-          @include f24;
-          color: var(--white);
-          @include mobile {
-            @include f18;
-          }
-        }
-      }
-    }
-  }
-  .inner_box_outer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    transform: translateY(-60px);
-    @include mobile {
-      transform: translateY(0px);
-    }
-    img {
-      @include mobile {
-        width: 100%;
-      }
-    }
-    .inner_box_detial {
-      background-color: var(--sunset-pearl);
-      padding: 15px 28px;
-      width: 400px;
-      border-radius: 50px 0 50px 0;
+  padding: 0 100px;
+  .section6_box {
+    padding: 200px 0 0 0;
+    .text1 {
+      font-size: 70px;
+      font-weight: 800;
+      color: #1096b5;
       text-align: center;
-      transform: translateY(-50px);
-      @include mobile {
-        width: 80%;
-      }
-      .inner_box_name {
-        @include f32;
-        color: var(--envy);
-        @include mobile {
-          @include f24;
-        }
-      }
-      .inner_box_designation {
-        @include f24;
-        color: var(--white);
-        @include mobile {
-          @include f18;
-        }
-      }
+      margin: 0 0 20px 0;
+      text-shadow: 2px 4px 1px rgb(255, 255, 255);
+    }
+    .text2 {
+      font-size: 20px;
+      font-weight: 500;
+      color: #375259;
+      // width: 800px;
+      margin: 0 0 20px 0;
+    }
+    button {
+      background-color: #ffe926;
+      color: black;
+      border: 1px solid black;
+      border-radius: 100px;
+      padding: 18px 45px;
+      font-size: 20px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 20px;
     }
   }
 }
