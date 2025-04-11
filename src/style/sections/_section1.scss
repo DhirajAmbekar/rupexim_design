@@ -3,7 +3,7 @@
   .inner_box_slider {
     .slider_img {
       width: 100%;
-      height: 100dvh;
+      height: calc(100vh - 30px - 74px);
 
       .slider_box {
         height: 100%;
