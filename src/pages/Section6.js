@@ -8,7 +8,7 @@ export const Section6 = () => {
         backgroundImage: `url(${Section6img})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "100vh",
+        height: "calc(100vh - 38px - 74px)",
         display: "flex",
         justifyContent: "start",
         alignItems: "end",

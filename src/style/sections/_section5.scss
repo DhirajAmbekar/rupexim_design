@@ -1,0 +1,36 @@
+.section5_container {
+  height: calc(100vh - 38px - 74px);
+  .slider_box {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.205);
+    padding: 0 0 100px 100px;
+    .slider_text1 {
+      font-size: 80px;
+      font-weight: 600;
+      color: white;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .slider_text2 {
+      font-size: 20px;
+      font-weight: 500;
+      color: white;
+      width: 50%;
+    }
+    button {
+      background-color: #ffe926;
+      color: black;
+      border: 1px solid black;
+      border-radius: 100px;
+      padding: 18px 45px;
+      font-size: 20px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  }
+}
