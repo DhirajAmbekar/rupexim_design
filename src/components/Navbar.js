@@ -1,7 +1,73 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 // import Logo from "../assets/logo.png";
+
+const links = [
+  {
+    label: "Home",
+    dropdown: [],
+  },
+  {
+    label: "About",
+    dropdown: [],
+  },
+  {
+    label: "Products",
+    dropdown: [
+      {
+        label: "Apparel",
+        submenu: [
+          {
+            label: "Ethnic",
+            innermenu: [
+              { label: "Men" },
+              { label: "Women" },
+              { label: "Kids" },
+            ],
+          },
+          {
+            label: "Western",
+            innermenu: [
+              { label: "Men" },
+              { label: "Women" },
+              { label: "Kids" },
+            ],
+          },
+        ],
+      },
+      {
+        label: "Bags",
+        submenu: [
+          { label: "Velluto", innermenu: [] },
+          { label: "Bagora", innermenu: [] },
+          { label: "Lunna", innermenu: [] },
+          { label: "NOMAD", innermenu: [] },
+        ],
+      },
+      {
+        label: "Toys",
+        submenu: [
+          { label: "Snugglekins", innermenu: [] },
+          { label: "BumbleBop", innermenu: [] },
+          { label: "Tiny Sprout", innermenu: [] },
+          { label: "Fuzzle & Co.", innermenu: [] },
+        ],
+      },
+    ],
+  },
+  {
+    label: "Brands",
+    dropdown: [],
+  },
+  {
+    label: "Contact",
+    dropdown: [],
+  },
+];
 export const Navbar = () => {
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
   const [menu_ctr, setMenu_ctr] = useState(false);
+
   return (
     <div className="navbar_container">
       <div className="navbar_section1">
@@ -55,29 +121,302 @@ export const Navbar = () => {
         </svg>
 
         <div className="navbar_section2_desktop_menu">
-          <a href="/">Home</a>
-          <a href="/">About</a>
-          <a href="/">
-            Products
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5 7.5L10 12.5L15 7.5"
-                stroke="black"
-                stroke-width="1.66667"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </a>
-          <a href="/">Brands</a>
-          <a href="/">Contact</a>
+          {links.map((link, idx) => {
+            return (
+              <a
+                href="/"
+                key={idx}
+                onMouseEnter={() => setActiveDropdown(idx)}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                {link.label}
+                {link.dropdown.length !== 0 && (
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 7.5L10 12.5L15 7.5"
+                      stroke="black"
+                      stroke-width="1.66667"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                )}
+                {activeDropdown === idx && link.dropdown.length !== 0 && (
+                  <div
+                    className="dropdown"
+                    onMouseEnter={() => setActiveDropdown(idx)}
+                  >
+                    {link.dropdown.map((item, subIdx) => (
+                      <div key={subIdx} className="dropdown__item">
+                        {item.label}
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7.5 15L12.5 10L7.5 5"
+                            stroke="black"
+                            stroke-width="1.66667"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        {item.submenu.length !== 0 && (
+                          <div
+                            className="semi-dropdown"
+                            onMouseEnter={() => setActiveDropdown(idx)}
+                          >
+                            {item.submenu.map((subItem, subSubIdx) => (
+                              <div
+                                key={subSubIdx}
+                                className="semi-dropdown__item"
+                              >
+                                {subItem.label}
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 20 20"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M7.5 15L12.5 10L7.5 5"
+                                    stroke="black"
+                                    stroke-width="1.66667"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                  />
+                                </svg>
+                                {subItem.innermenu.length !== 0 && (
+                                  <div
+                                    className="semi-dropdown2"
+                                    onMouseEnter={() => setActiveDropdown(idx)}
+                                  >
+                                    {subItem.innermenu.map(
+                                      (subItem1, subSubIdx1) => (
+                                        <div
+                                          key={subSubIdx1}
+                                          className="semi-dropdown2__item2"
+                                        >
+                                          {subItem1.label}
+                                        </div>
+                                      )
+                                    )}
+                                  </div>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </a>
+            );
+          })}
         </div>
+        {/* <div className="nav_bar_dropdown_menu" ref={dropdownRef}>
+          <div
+            className="nav_bar_dropdown_menu_item"
+            onMouseEnter={(e) => {
+              handleHover2(e);
+            }}
+          >
+            <div>Apparel</div>
+            <div>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.5 15L12.5 10L7.5 5"
+                  stroke="black"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            className="nav_bar_dropdown_menu_item"
+            // onMouseEnter={(e) => {
+            //   handleHover2(e);
+            // }}
+          >
+            <div>Bags</div>
+            <div>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.5 15L12.5 10L7.5 5"
+                  stroke="black"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            className="nav_bar_dropdown_menu_item"
+            // onMouseEnter={(e) => {
+            //   handleHover2(e);
+            // }}
+          >
+            <div>Toys</div>
+            <div>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.5 15L12.5 10L7.5 5"
+                  stroke="black"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div className="nav_bar_dropdown_menu" ref={dropdownRef2}>
+          <div
+            className="nav_bar_dropdown_menu_item"
+            onMouseEnter={(e) => {
+              handleHover3(e);
+            }}
+          >
+            <div>Ethnic</div>
+            <div>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.5 15L12.5 10L7.5 5"
+                  stroke="black"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            className="nav_bar_dropdown_menu_item"
+            onMouseEnter={(e) => {
+              handleHover3(e);
+            }}
+          >
+            <div>Western</div>
+            <div>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.5 15L12.5 10L7.5 5"
+                  stroke="black"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div className="nav_bar_dropdown_menu" ref={dropdownRef3}>
+          <div className="nav_bar_dropdown_menu_item">
+            <div>Men</div>
+            <div>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.5 15L12.5 10L7.5 5"
+                  stroke="black"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div className="nav_bar_dropdown_menu_item">
+            <div>Women</div>
+            <div>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.5 15L12.5 10L7.5 5"
+                  stroke="black"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <div className="nav_bar_dropdown_menu_item">
+            <div>Kids</div>
+            <div>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.5 15L12.5 10L7.5 5"
+                  stroke="black"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+        </div> */}
+
         <div className="navbar_section2_search_container">
           <svg
             width="22"
@@ -140,6 +479,7 @@ export const Navbar = () => {
           </svg>
         </div>
       </div>
+
       {menu_ctr && (
         <div className="navbar_section2_list">
           <a href="/">Home</a>
